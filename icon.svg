@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#41BDF5"/>
+      <stop offset="100%" stop-color="#0B6BCB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Фон -->
+  <rect x="8" y="8" width="240" height="240" rx="48" fill="url(#g2)"/>
+
+  <!-- Подпись источника -->
+  <text x="40" y="86" font-family="Arial, Helvetica, sans-serif"
+        font-size="20" font-weight="700" fill="#fff">HA</text>
+
+  <!-- Стрелка HA -> ZONT (по центру) -->
+  <g fill="#fff">
+    <path d="M64 128 h96 v-16 l32 24 -32 24 v-16 H64 z"/>
+  </g>
+
+  <!-- Подпись цели -->
+  <text x="176" y="196" font-family="Arial, Helvetica, sans-serif"
+        font-size="20" font-weight="700" fill="#fff">ZONT</text>
+
+  <!-- Мини-термометр справа (символ ZONT) -->
+  <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round">
+    <path d="M210 60 v34"/>
+    <circle cx="210" cy="104" r="10" fill="#fff" stroke="none"/>
+  </g>
+</svg>

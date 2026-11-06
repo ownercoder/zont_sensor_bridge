@@ -1,0 +1,30 @@
+send_temperature:
+  name: Send temperature to Zont
+  description: Manually send a temperature value to a Zont sensor.
+  fields:
+    device_id:
+      name: Device
+      description: The Zont device to send to.
+      required: true
+      selector:
+        device: {}
+    zont_id:
+      name: Zont sensor ID
+      description: Integer sensor identifier on the Zont thermostat.
+      required: true
+      selector:
+        number:
+          min: 1
+          max: 10000
+          step: 1
+          mode: box
+    temperature:
+      name: Temperature
+      description: Temperature value in degrees Celsius.
+      required: true
+      selector:
+        number:
+          min: -100
+          max: 200
+          step: 0.1
+          mode: box

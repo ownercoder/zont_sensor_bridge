@@ -1,0 +1,135 @@
+{
+  "title": "Zont Sensor Bridge",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Zont",
+        "description": "Enter WebSocket connection details for your Zont thermostat.",
+        "data": {
+          "url": "WebSocket URL",
+          "username": "Username",
+          "password": "Password",
+          "basic_auth": "Use HTTP Basic Auth"
+        }
+      },
+      "test": {
+        "title": "Test Connection",
+        "description": "Testing the connection to your Zont thermostat."
+      },
+      "options": {
+        "title": "Update Settings",
+        "description": "Configure how often temperatures are re-sent to Zont.",
+        "data": {
+          "update_interval": "Update interval (seconds)"
+        }
+      },
+      "sensors": {
+        "title": "Temperature Sensors",
+        "description": "Temperature sensors sent to Zont: {sensors}",
+        "menu_options": {
+          "add_sensor": "Add sensor",
+          "remove_sensor": "Remove sensors",
+          "finish": "Finish"
+        }
+      },
+      "add_sensor": {
+        "title": "Add Temperature Sensor",
+        "description": "Map a Home Assistant temperature sensor to a Zont sensor ID.",
+        "data": {
+          "entity_id": "Temperature sensor",
+          "zont_id": "Zont sensor (type 1)",
+          "min": "Minimum value (optional)",
+          "max": "Maximum value (optional)"
+        }
+      },
+      "remove_sensor": {
+        "title": "Remove Sensors",
+        "description": "Select the sensors to remove.",
+        "data": {
+          "remove": "Sensors to remove"
+        }
+      },
+      "finish": {
+        "title": "Finish",
+        "description": "Complete the configuration."
+      }
+    },
+    "error": {
+      "invalid_url": "URL must start with ws:// or wss://",
+      "cannot_connect": "Failed to connect. Please check the URL and credentials.",
+      "invalid_auth": "Invalid username or password.",
+      "no_sensors": "Add at least one sensor.",
+      "duplicate_zont_id": "Zont sensor IDs must be unique.",
+      "no_zont_sensors": "No temperature sensors (type 1) were found on the Zont device."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "options": {
+        "title": "Update Settings",
+        "description": "Configure how often temperatures are re-sent to Zont.",
+        "data": {
+          "update_interval": "Update interval (seconds)"
+        }
+      },
+      "sensors": {
+        "title": "Temperature Sensors",
+        "description": "Temperature sensors sent to Zont: {sensors}",
+        "menu_options": {
+          "add_sensor": "Add sensor",
+          "remove_sensor": "Remove sensors",
+          "finish": "Finish"
+        }
+      },
+      "add_sensor": {
+        "title": "Add Temperature Sensor",
+        "description": "Map a Home Assistant temperature sensor to a Zont sensor ID.",
+        "data": {
+          "entity_id": "Temperature sensor",
+          "zont_id": "Zont sensor (type 1)",
+          "min": "Minimum value (optional)",
+          "max": "Maximum value (optional)"
+        }
+      },
+      "remove_sensor": {
+        "title": "Remove Sensors",
+        "description": "Select the sensors to remove.",
+        "data": {
+          "remove": "Sensors to remove"
+        }
+      },
+      "finish": {
+        "title": "Finish",
+        "description": "Complete the configuration."
+      }
+    },
+    "error": {
+      "no_sensors": "Add at least one sensor.",
+      "duplicate_zont_id": "Zont sensor IDs must be unique.",
+      "no_zont_sensors": "No temperature sensors (type 1) were found on the Zont device."
+    }
+  },
+  "services": {
+    "send_temperature": {
+      "name": "Send temperature to Zont",
+      "description": "Manually send a temperature value to a Zont sensor.",
+      "fields": {
+        "device_id": {
+          "name": "Device",
+          "description": "The Zont device to send to."
+        },
+        "zont_id": {
+          "name": "Zont sensor ID",
+          "description": "Integer sensor identifier on the Zont thermostat."
+        },
+        "temperature": {
+          "name": "Temperature",
+          "description": "Temperature value in degrees Celsius."
+        }
+      }
+    }
+  }
+}
